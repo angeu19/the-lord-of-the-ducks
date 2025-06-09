@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="LOGO-K.S.ico" type="image/png">
+  <title>EL SEÑOR DE LOS PATITOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Fredoka', cursive;
+      overflow: hidden;
+      position: relative;
+    }
+
+    video#bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(255, 192, 124, 0.794), rgba(255, 190, 98, 0.794));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 4em;
+      color: white;
+      text-shadow: 2px 2px 6px #00000070;
+      font-family: 'calibri', cursive;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: white;
+      max-width: 600px;
+      text-shadow: 1px 1px 4px #00000060;
+      margin-bottom: 40px;
+    }
+
+    a.boton-ingresar {
+      background: linear-gradient(to right, #ff8425, #f39c4a);
+      color: white;
+      font-size: 1.5em;
+      padding: 15px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    a.boton-ingresar:hover {
+      background: linear-gradient(to left, #ff944d, #ff8e31);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <video id="bg-video" autoplay muted loop>
+    <source src="FONDO VIDEO..mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <div class="overlay">
+    <h1>🐤 BIENVENID@ A 🐤</h1>
+    <h1>🐥."EL SEÑOR DE LOS PATITOS".🐥</h1>
+    <p>Patitos,Peluches,Llaveros,Stickers, y Pines Hechos con Mucho Amor y Cariño para Ti y para los que Mas Amas.</p>
+    <p>!Estas en el Lugar Correcto!</p>
+    <a href="file:///D:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/INDEX.HTML.HTML" class="boton-ingresar">Entrar a Nuestra Tienda 🐣</a>
+  </div>
+
+</body>
+</html>
+

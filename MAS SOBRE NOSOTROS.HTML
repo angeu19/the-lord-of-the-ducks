@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Más Sobre Nosotros</title>
+  <link rel="icon" href="LOGO-K.S.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Video de fondo */
+    #videoFondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -2;
+      object-fit: cover;
+    }
+
+    .capa {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(255, 165, 0, 0.6), rgba(255, 255, 0, 0.6));
+      z-index: -1;
+    }
+
+    /* Encabezado */
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #FFA500, #FFD700);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    /* Galería */
+    .galeria {
+      padding: 40px 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .imagenes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .imagenes img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Video */
+    .video {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .video video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Pie de página */
+    footer {
+      background: linear-gradient(to right, #FFA500, #FFD700);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="videoFondo">
+    <source src="FONDO VIDEO..mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <!-- Capa de color degradado -->
+  <div class="capa"></div>
+
+  <!-- Encabezado -->
+  <header>
+    <img src="LOGO-K.S.ico" alt="Logo del sitio" class="logo">
+    <h1>🐥MAS SOBRE NOSOTROS🐥</h1>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="galeria">
+      <h2>🐤EL SEÑOR DE LOS PATITOS🐤</h2>
+      <div class="imagenes">
+        <img src="PUESTO 1.jpeg" alt="Imagen 1">
+        <img src="PUESTO 2.jpeg" alt="Imagen 2">
+        <img src="PUESTO 3.jpeg" alt="Imagen 3">
+        <img src="PUESTO 4.jpeg" alt="Imagen 4">
+        <img src="PUESTO 5.jpg" alt="Imagen 5">
+        <img src="PUESTO 6.jpg" alt="Imagen 6">
+        <img src="PUESTO 0.jpeg" alt="Imagen 7">
+      </div>
+    </section>
+
+    <section class="video">
+      <h2>🐣NUESTRO OBJETIVO🐣</h2>
+      <video controls>
+        <source src="VIDEO PATITOS..mp4" type="video/mp4">
+        Tu navegador no soporta este video.
+      </video>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 EL SEÑOR DE LOS PATITOS.-Todos los derechos reservados-</p>
+  </footer>
+
+</body>
+</html>

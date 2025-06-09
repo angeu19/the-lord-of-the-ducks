@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL SEÑOR DE LOS PATOS</title>
+  <link rel="icon" href="LOGO-K.S.ico">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+      background: url('https://c.pxhere.com/photos/80/51/electric_electric_guitars_guitars_music_musical_instrument_musician_rock_sound-1074564.jpg!d') no-repeat center center/cover;
+      color:#1B2631 ;
+    }
+
+    header {
+      background-color:#ffaf01;
+      color: #fff;
+      padding: 8px;
+      text-align: center;
+    }
+
+    nav {
+      background-color:#ff660d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-cart {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-cart input[type="text"] {
+      padding: 5px;
+      border: none;
+    }
+
+    .search-cart button {
+      padding: 5px 10px;
+      background-color: #fff;
+      color: #fa6c0d;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background-color: #ffd152;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      z-index: 1000;
+    }
+
+    nav ul ul li {
+      width: 100%;
+    }
+
+    nav ul ul li a {
+      padding: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 100%;
+      max-width: 280px;
+      padding: 15px;
+      background-color: #ffd900;
+    }
+
+    .sidebar img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #ff790b;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    #cart-modal {
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background-color: #fff;
+      border: 1px solid #ffae00b7;
+      padding: 15px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 2000;
+    }
+
+    #cart-modal h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      .search-cart {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    .video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .contenido {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: rgb(255, 145, 1);
+      text-align: center;
+      background-color: rgba(255, 125, 4, 0.555); /* Oscurece un poco el video */
+    }
+  </style>
+</head>
+
+<body>
+  <video class="video-fondo" autoplay muted loop>
+    <source src="FONDO VIDEO..mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+  <header>
+    <h1>🐤.EL SEÑOR DE LOS PATOS.🐤</h1>
+    <img src="LOGO-K.S.ico" alt="LOGO">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/INICIO%20E.S.D.L.P.HTML">🐣.INICIO.🐣</a></li>
+      <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/MAS%20SOBRE%20NOSOTROS.HTML">🐤.MAS SOBRE NOSOTROS.🐤</a></li>
+      <li>
+      <li>
+        <a href="">🐻.NUESTROS PRODUCTOS.🐻</a>
+        <ul>
+          <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/BROCHES%20Y%20PATOS.HTML" onclick="addToCart('BROCHES Y PATITOS')">BROCHES Y PATITOS</a></li>
+          <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/STICKERS.HTML" onclick="addToCart('STICKERS')">STICKERS</a></li>
+          <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/PINES.HTML" onclick="addToCart('PINES')">PINES</a></li>
+          <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/LLAVEROS.HTML" onclick="addToCart('LLAVEROS')">LLAVEROS</a></li>
+          <li><a href="file:///E:/EL%20SE%C3%91OR%20DE%20LOS%20PATOS/PELUCHES.HTML" onclick="addToCart('PELUCHES')">PELUCHES</a></li>
+        </ul>
+      </li>
+    <div class="search-cart">
+      <input type="text" placeholder="Buscar...">
+      <button>Buscar</button>
+      <button onclick="toggleCart()"> 🚂 Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+  </nav>
+
+  <div id="cart-modal">
+    <h3>Carrito de Compras</h3>
+    <ul id="cart-items"></ul>
+  </div>
+<div class="container">
+    <aside class="sidebar">
+      <img src="PUESTO 0.jpeg" alt="Tienda 1">
+      <img src="PUESTO 1.jpeg" alt="Tienda 2">
+      <img src="PUESTO 2.jpeg" alt="Tienda 3">
+      <img src="PUESTO 3.jpeg" alt="Tienda 4">
+      <img src="PUESTO 4.jpeg" alt="TIENDA 5">
+      <img src="PUESTO 5.jpg" alt="Tienda 6">
+      <img src="PUESTO 6.jpg" alt="Tienda 7">
+      <img src="PUESTO 1.0.png" alt="Tienda 8">
+    </aside>
+
+    <section class="main-content">
+      <div class="container">
+      <aside class="sidebar">
+      <img src="W1.jpeg" alt="I 1">
+      <img src="W2.jpeg" alt="I 2">
+      <img src="W7.jpeg" alt="I 3">
+      <img src="W3.jpeg" alt="I 4">
+      <img src="W4.jpeg" alt="I 5">
+      <img src="W5.jpeg" alt="I 6">
+      <img src="W6.jpeg" alt="I 7">
+      <img src="W8.jpeg" alt="I 8">
+      <img src="PELUCHE 8.jpeg" alt="I 8">
+      <img src="PELUCHE 9.jpeg" alt="I 8">
+      <img src="PELUCHE 10.jpeg" alt="I 8">
+      <img src="PELUCHE 11.jpeg" alt="I 8">
+      <img src="PELUCHE 12.jpeg" alt="I 8">
+    </aside>
+    </section>
+    <section class="main-content">
+        <div class="container">
+        <aside class="sidebar">
+        <img src="PELUCHE 1.jpeg" alt="I 1">
+        <img src="PELUCHE 2.jpeg" alt="I 2">
+        <img src="PELUCHE 3.jpeg" alt="I 3">
+        <img src="PELUCHE 4.jpeg" alt="I 4">
+        <img src="PELUCHE 5.jpeg" alt="I 5">
+        <img src="PELUCHE 6.jpeg" alt="I 6">
+        <img src="PELUCHE 7.jpeg" alt="I 7">
+        <img src="S8.jpeg" alt="Tienda 7">
+        <img src="S9.jpeg" alt="Tienda 7">
+        <img src="S10.jpeg" alt="Tienda 7">
+        <img src="S11.jpeg" alt="Tienda 7">
+      </aside>
+      </section>
+      <section class="main-content">
+        <div class="container">
+        <aside class="sidebar">
+        <img src="S1.jpeg" alt="I 1">
+        <img src="S2.jpeg" alt="I 2">
+        <img src="S3.jpeg" alt="I 3">
+        <img src="S4.jpeg" alt="Tienda 4">
+        <img src="S5.jpeg" alt="I 5">
+        <img src="S6.jpeg" alt="I 6">
+        <img src="S7.jpeg" alt="Tienda 7">
+        <img src="S14.jpeg" alt="Tienda 7">
+        <img src="PIN 1.jpeg" alt="Tienda 7">
+        <img src="PIN 2.jpeg" alt="Tienda 7">
+        <img src="PIN 3.jpeg" alt="Tienda 7">
+        <img src="PIN 4.jpeg" alt="Tienda 7">
+       </aside>
+      </section>
+      <section class="main-content">
+        <div class="container">
+        <aside class="sidebar">
+        <img src="PIN 5.jpeg" alt="I 1">
+        <img src="PIN 6.jpeg" alt="I 2">
+        <img src="PIN 7.jpeg" alt="I 3">
+        <img src="PIN 8.jpeg" alt="Tienda 4">
+        <img src="PIN 9.jpeg" alt="I 5">
+        <img src="PIN 10.jpeg" alt="I 6">
+        <img src="PIN 12.jpeg" alt="Tienda 7">
+        <img src="L2.jpeg" alt="Tienda 7">
+        <img src="L9.jpeg" alt="Tienda 7">
+        <img src="L4.jpeg" alt="Tienda 7">
+        <img src="L8.jpeg" alt="Tienda 7">
+        <img src="L10.jpeg" alt="Tienda 7">
+       </aside>
+      </section>
+  </div>
+
+  <footer>
+    <p>&copy;2025 EL SEÑOR DE LOS PATITOS.-Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(item) {
+      cart.push(item);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const cartCount = document.getElementById('cart-count');
+      const cartItems = document.getElementById('cart-items');
+      cartCount.textContent = cart.length;
+      cartItems.innerHTML = '';
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = item + ' ';
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Eliminar';
+        removeBtn.onclick = () => removeFromCart(index);
+        li.appendChild(removeBtn);
+        cartItems.appendChild(li);
+      });
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cart-modal');
+      modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</html>
